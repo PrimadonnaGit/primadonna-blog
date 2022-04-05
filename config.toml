@@ -1,0 +1,57 @@
+baseurl = "http://www.example.com"
+title = "Primadonna"
+theme = "hugo-coder"
+languagecode = "en"
+defaultcontentlanguage = "en"
+
+paginate = 20
+
+pygmentsstyle = "bw"
+pygmentscodefences = true
+pygmentscodefencesguesssyntax = true
+
+#disqusShortname = "yourdiscussshortname"
+
+[params]
+  author = "Jinwoo Hyun"
+  info = "Backend Developer"
+  description = "Primadonna's dev blog"
+  keywords = "blog,developer,python,golang,fastapi,dotslashdash"
+  avatarurl = "images/profile.jpg"
+
+  favicon_32 = "images/favicon-32x32.png"
+  favicon_16 = "images/favicon-16x16.png"
+
+  since = 2022
+
+  enableTwemoji = true
+
+  colorScheme = "auto"
+  hidecolorschemetoggle = false
+
+#  customCSS = ["css/custom.css"]
+#  customSCSS = ["scss/custom.scss"]
+#  customJS = ["js/custom.js"]
+
+#[taxonomies]
+#  category = "categories"
+#  series = "series"
+#  tag = "tags"
+#  author = "authors"
+
+# Social links
+[[params.social]]
+  name = "Github"
+  icon = "fa fa-github fa-2x"
+  weight = 1
+  url = "https://github.com/PrimadonnaGit"
+
+# Menu links
+[[menu.main]]
+  name = "Blog"
+  weight = 1
+  url  = "posts/"
+[[menu.main]]
+  name = "About"
+  weight = 2
+  url = "about/"
