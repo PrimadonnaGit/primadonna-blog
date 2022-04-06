@@ -1,5 +1,4 @@
 .idea/*
 archetypes/*
-.gitmodules
 .hugo_build.lock
 .gitignore

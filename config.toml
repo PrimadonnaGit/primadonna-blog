@@ -1,6 +1,6 @@
-baseurl = "http://www.example.com"
-title = "Primadonna"
-theme = "hugo-coder"
+baseurl = "https://primadonna.dev/"
+title = "Primadonna 개발 블로그"
+
 languagecode = "en"
 defaultcontentlanguage = "en"
 
@@ -13,9 +13,9 @@ pygmentscodefencesguesssyntax = true
 #disqusShortname = "yourdiscussshortname"
 
 [params]
-  author = "Jinwoo Hyun"
+  author = "Hyun Jinwoo"
   info = "Backend Developer"
-  description = "Primadonna's dev blog"
+  description = "primadonna's dev blog"
   keywords = "blog,developer,python,golang,fastapi,dotslashdash"
   avatarurl = "images/profile.jpg"
 
@@ -46,16 +46,27 @@ pygmentscodefencesguesssyntax = true
   weight = 1
   url = "https://github.com/PrimadonnaGit"
 
+[[params.social]]
+  name = "Facebook"
+  icon = "fa fa-facebook fa-2x"
+  weight = 2
+  url = "https://www.facebook.com/profile.php?id=100079931731283"
+
 # Menu links
+#[[menu.main]]
+#  name = "About"
+#  weight = 1
+#  url  = "about"
 [[menu.main]]
-  name = "About"
+  name = "Categories"
   weight = 1
-  url  = "about"
+  url = "categories"
+
 [[menu.main]]
   name = "Posts"
   weight = 2
   url = "posts"
-[[menu.main]]
-  name = "Contact"
-  weight = 3
-  url  = "contact"
+#[[menu.main]]
+#  name = "Contact"
+#  weight = 3
+#  url  = "contact"
