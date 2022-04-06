@@ -1,9 +1,7 @@
 +++
-author = "primadonna"
 title = "사용자 인증방식의 종류"
 date = "2022-04-05"
 description = "사용자 인증방식의 종류에 대해서 알아보자"
-authors = ["JinWoo Hyun"]
 categories = ["Authorization"]
 externalLink = ""
 featuredImage = "https://images.unsplash.com/photo-1519400197429-404ae1a1e184?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1064&q=80"

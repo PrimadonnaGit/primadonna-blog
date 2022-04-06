@@ -3629,4 +3629,11 @@ figure {
       left: 50%;
       transform: translate(-50%, -50%); }
 
+.float-index {
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 100;
+  position: fixed;
+  font-size: 1.6em; }
+
 /*# sourceMappingURL=coder.css.map */

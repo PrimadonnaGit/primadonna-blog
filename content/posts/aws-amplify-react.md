@@ -1,9 +1,8 @@
 +++ 
-draft = false
-date = 2022-04-07T00:05:17+09:00
+draft = false 
+date = 2022-04-07T00:05:17+09:00 
 title = "AWS Amplify로 React 앱 CI/CD 자동화하기"
 description = "AWS Amplify 서비스를 알아봅시다."
-authors = ["Jinwoo Hyun"]
 featuredImage = "https://images.velog.io/images/primadonna/post/3713cfb4-3f33-43b7-84d0-a94ff05228ea/image.png"
 externalLink = ""
 slug = ""
