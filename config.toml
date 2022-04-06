@@ -10,7 +10,6 @@ pygmentsstyle = "bw"
 pygmentscodefences = true
 pygmentscodefencesguesssyntax = true
 
-#disqusShortname = "yourdiscussshortname"
 
 [params]
   author = "Hyun Jinwoo"
@@ -29,9 +28,17 @@ pygmentscodefencesguesssyntax = true
   colorScheme = "auto"
   hidecolorschemetoggle = false
 
-#  customCSS = ["css/custom.css"]
-#  customSCSS = ["scss/custom.scss"]
-#  customJS = ["js/custom.js"]
+[params.utterances]
+  repo = "PrimadonnaGit/primadonna-blog"
+  issueTerm = "pathname"
+  theme = "github-light"
+  label = "comment"
+
+[params.googleTagManager]
+    id = "G-RYRBT21FK8"
+
+[params.cloudflare]
+    token = "fd4dccb654a349b387495925dbfd6242"
 
 [taxonomies]
   category = "categories"
@@ -52,21 +59,15 @@ pygmentscodefencesguesssyntax = true
   weight = 2
   url = "https://www.facebook.com/profile.php?id=100079931731283"
 
-# Menu links
-#[[menu.main]]
-#  name = "About"
-#  weight = 1
-#  url  = "about"
+
 [[menu.main]]
   name = "Categories"
   weight = 1
   url = "categories"
+  target = "_blank"
 
 [[menu.main]]
   name = "Posts"
   weight = 2
   url = "posts"
-#[[menu.main]]
-#  name = "Contact"
-#  weight = 3
-#  url  = "contact"
+  target = "_blank"
