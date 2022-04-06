@@ -13,7 +13,7 @@ pygmentscodefencesguesssyntax = true
 
 [params]
   author = "Hyun Jinwoo"
-  info = "Backend Developer"
+  info = "Software Engineer"
   description = "primadonna's dev blog"
   keywords = "blog,developer,python,golang,fastapi,dotslashdash"
   avatarurl = "images/profile.jpg"
@@ -53,12 +53,12 @@ pygmentscodefencesguesssyntax = true
   weight = 1
   url = "https://github.com/PrimadonnaGit"
 
-[[params.social]]
-  name = "Facebook"
-  icon = "fa fa-facebook fa-2x"
-  weight = 2
-  url = "https://www.facebook.com/profile.php?id=100079931731283"
-
+#[[params.social]]
+#  name = "Facebook"
+#  icon = "fa fa-facebook fa-2x"
+#  weight = 2
+#  url = "https://www.facebook.com/profile.php?id=100079931731283"
+#
 
 [[menu.main]]
   name = "Categories"
