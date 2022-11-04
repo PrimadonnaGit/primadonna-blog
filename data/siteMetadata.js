@@ -11,7 +11,7 @@ const siteMetadata = {
   siteUrl: 'https://primadonna.dev',
   siteRepo: 'https://github.com/timlrx/tailwind-nextjs-starter-blog',
   siteLogo: '/static/images/logo.png',
-  image: '/static/images/avatar.png',
+  image: '/static/images/profile.jpg',
   socialBanner: '/static/images/twitter-card.png',
   email: 'primadonna@dotslashdash.com',
   github: 'https://github.com/PrimadonnaGit',
