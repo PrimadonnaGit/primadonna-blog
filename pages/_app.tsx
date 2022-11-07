@@ -15,19 +15,23 @@ import siteMetadata from '@/data/siteMetadata'
 import { Analytics } from 'pliny/analytics'
 import { SearchProvider } from 'pliny/search'
 import LayoutWrapper from '@/components/LayoutWrapper'
+import * as Vercel from '@vercel/analytics/react'
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <ThemeProvider attribute="class" defaultTheme={siteMetadata.theme}>
-      <Head>
-        <meta content="width=device-width, initial-scale=1" name="viewport" />
-      </Head>
-      <Analytics analyticsConfig={siteMetadata.analytics} />
-      <SearchProvider searchConfig={siteMetadata.search}>
-        <LayoutWrapper>
-          <Component {...pageProps} />
-        </LayoutWrapper>
-      </SearchProvider>
-    </ThemeProvider>
+    <>
+      <ThemeProvider attribute="class" defaultTheme={siteMetadata.theme}>
+        <Head>
+          <meta content="width=device-width, initial-scale=1" name="viewport" />
+        </Head>
+        <Analytics analyticsConfig={siteMetadata.analytics} />
+        <SearchProvider searchConfig={siteMetadata.search}>
+          <LayoutWrapper>
+            <Component {...pageProps} />
+          </LayoutWrapper>
+        </SearchProvider>
+      </ThemeProvider>
+      <Vercel.Analytics />
+    </>
   )
 }
