@@ -1,18 +1,27 @@
 ---
-title: Python Forward References 왜 필요할까? (PEP 484)
+title: Python Forward Reference 왜 필요할까? (PEP 484)
 date: "2023-09-11"
 lastmod: "2023-09-11"
 tags: ["python", "forward reference", "type hinting", "PEP 484"]
-draft: true
+draft: false
 summary: Forward References는 타입 어노테이션에서 클래스나 함수가 아직 정의되지 않았을 때 사용하는 방법으로, 코드 가독성과 정적 타입 검사를 향상시키는 데 도움을 주는 기능입니다.
 images: ["https://images.unsplash.com/photo-1533226458520-6f71cffeaa6a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dHlwZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60"]
-authors: ["default"]
 ---
 
 # Forward Reference 란?
 
-Python Forward References는 [PEP 484](https://peps.python.org/pep-0484/#forward-references)에 소개된 타입 어노테이션의 일부입니다.
-Forward References는 타입 어노테이션을 사용할 때 타입이 정의되기 전에 사용할 수 있도록 해주는 기능입니다. 이것은 주로 클래스나 함수가 미리 정의되어 있지 않을 때 유용합니다.
+Python Forward Reference는 [PEP 484](https://peps.python.org/pep-0484/#forward-references)에 소개된 타입 어노테이션의 일부입니다.
+
+아래 코드처럼 타입을 문자열 형태로 표현하고, 문자열에 해당하는 타입이 정의되면 해당 타입으로 대체되는 방식입니다.
+```python
+class Person:
+    def __init__(self, name: str, friends: list["Person"]):
+        self.name = name
+        self.friends = friends
+```
+
+Forward References는 타입 어노테이션을 사용할 때 타입이 정의되기 전에 사용할 수 있도록 해주는 기능입니다.
+주로 클래스나 함수가 미리 정의되어 있지 않을 때 유용합니다.
 
 
 ## Forward Reference 사용 예제
@@ -32,7 +41,7 @@ class Person:
 **Forward Reference 사용**
 ```python
 class Person:
-    def __init__(self, name: str, friends: list['Person']):
+    def __init__(self, name: str, friends: list["Person"]):
         self.name = name
         self.friends = friends
 ```
@@ -41,49 +50,65 @@ class Person:
 
 ### 순환 참조(circular import)가 발생하는 경우
 
-클래스 A가 클래스 B를 참조하고, 클래스 B가 클래스 A를 참조하는 경우가 있습니다. 이런 경우, Forward References를 사용하여 어떤 클래스가 참조될 것임을 미리 선언할 수 있습니다.
-
 **Forward Reference 미사용**
 ```python
-# person.py
-from friend import Friend
+# models/person.py
+from models.friend import Friend
+
 
 class Person:
     def __init__(self, name: str, friends: list[Friend]):
         self.name = name
         self.friends = friends
 
-# friend.py
-
+# models/friend.py
 from person import Person
+
 
 class Friend:
     def __init__(self, name: str, friends: list[Person]):
         self.name = name
         self.friends = friends
 
+# main.py
+
+from models.friend import Friend
+from models.person import Person
+
+...
+
 # ImportError: cannot import name 'Friend' from partially initialized module 'friend' (most likely due to a circular import)
 ```
 
+주로 Django 모델의 Signiture를 필요할 때, 일반적으로 각 모델은 별도의 파일에 있으며 다른 모델과 관련된 인수를 받는 메서드가 있습니다.
+
+파이썬에서 순환 참조가 작동하는 방식 때문에 필요한 모든 모델을 직접 임포트할 수 없는 경우가 많습니다. 이 경우 Forward Reference를 사용하여 순환 참조를 해결할 수 있습니다.
+
+
 **Forward Reference 사용**
 ```python
+# models/person.py
+from models import friend
 
-# person.py
-from friend import Friend
 
 class Person:
-    def __init__(self, name: str, friends: list['Friend']):
+    def __init__(self, name: str, friends: list["friend.Friend"]):
         self.name = name
         self.friends = friends
 
-# friend.py
+# models/friend.py
+from models import person
 
-from person import Person
 
 class Friend:
-    def __init__(self, name: str, friends: list['Person']):
+    def __init__(self, name: str, friends: list["person.Person"]):
         self.name = name
         self.friends = friends
+
+# main.py
+
+from models.friend import Friend
+from models.person import Person
 ```
 
 

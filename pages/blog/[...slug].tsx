@@ -51,7 +51,7 @@ export default function BlogPostPage({
       {'draft' in post && post.draft === true ? (
         <div className="mt-24 text-center">
           <PageTitle>
-            Under Construction{' '}
+            찾을 수 없는 페이지입니다.
             <span role="img" aria-label="roadwork sign">
               🚧
             </span>

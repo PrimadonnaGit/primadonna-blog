@@ -5,7 +5,7 @@ const siteMetadata = {
   title: 'Primadonna Dev Blog',
   author: 'JinWoo Hyun',
   headerTitle: 'Primadonna',
-  description: '닷슬래시대시 서버 개발자의 개발 블로그',
+  description: 'Software Engineer',
   language: 'en-us',
   theme: 'system', // system, dark or light
   siteUrl: 'https://primadonna.work',
