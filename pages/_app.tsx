@@ -20,7 +20,7 @@ import * as Vercel from '@vercel/analytics/react'
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
-      <ThemeProvider attribute="class" defaultTheme={siteMetadata.theme}>
+      <ThemeProvider attribute="class" defaultTheme={siteMetadata.theme} forcedTheme="dark">
         <Head>
           <meta content="width=device-width, initial-scale=1" name="viewport" />
         </Head>
